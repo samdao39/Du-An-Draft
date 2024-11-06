@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="setup driver run pom" verbose="1">
+    <test name="parallel pom" parallel="classes">
+        <classes>
+            <class name="sam.com.pageObjectModal.Testcases.LoginTest" />
+        </classes>
+    </test>
+</suite>
