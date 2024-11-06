@@ -1,0 +1,5 @@
+sam/com/common/BaseTest.class
+sam/com/pageObjectModal/Pages/CommonPage.class
+sam/com/pageObjectModal/Testcases/LoginTest.class
+sam/com/pageObjectModal/Pages/ManageProfilePage.class
+sam/com/pageObjectModal/Pages/LoginPage.class

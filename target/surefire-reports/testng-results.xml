@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-11-06T21:36:49 ICT" name="Surefire suite" finished-at="2024-11-06T21:37:36 ICT" duration-ms="47275">
+    <groups>
+    </groups>
+    <test started-at="2024-11-06T21:36:49 ICT" name="Surefire test" finished-at="2024-11-06T21:37:36 ICT" duration-ms="47275">
+      <class name="sam.com.pageObjectModal.Testcases.LoginTest">
+        <test-method is-config="true" signature="createDriver()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:36:49 ICT" name="createDriver" finished-at="2024-11-06T21:36:57 ICT" duration-ms="8166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDriver -->
+        <test-method signature="loginFailWithEmailInvalid()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:36:57 ICT" name="loginFailWithEmailInvalid" finished-at="2024-11-06T21:37:06 ICT" duration-ms="9220" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginFailWithEmailInvalid -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:37:06 ICT" name="closeDriver" finished-at="2024-11-06T21:37:06 ICT" duration-ms="107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="createDriver()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:37:06 ICT" name="createDriver" finished-at="2024-11-06T21:37:12 ICT" duration-ms="5556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDriver -->
+        <test-method signature="loginFailWithPasswordInvalid()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:37:12 ICT" name="loginFailWithPasswordInvalid" finished-at="2024-11-06T21:37:20 ICT" duration-ms="8428" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginFailWithPasswordInvalid -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:37:20 ICT" name="closeDriver" finished-at="2024-11-06T21:37:20 ICT" duration-ms="98" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="createDriver()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:37:20 ICT" name="createDriver" finished-at="2024-11-06T21:37:26 ICT" duration-ms="5481" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDriver -->
+        <test-method signature="loginSuccess()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:37:26 ICT" name="loginSuccess" finished-at="2024-11-06T21:37:36 ICT" duration-ms="10068" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginSuccess -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:sam.com.pageObjectModal.Testcases.LoginTest@212bf671]" started-at="2024-11-06T21:37:36 ICT" name="closeDriver" finished-at="2024-11-06T21:37:36 ICT" duration-ms="90" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- sam.com.pageObjectModal.Testcases.LoginTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
