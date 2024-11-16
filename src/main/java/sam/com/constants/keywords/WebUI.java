@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import sam.com.constants.constants.ConfigData;
 import sam.com.constants.constants.drivers.DriverManager;
 
 import java.time.Duration;
@@ -17,7 +18,7 @@ import static java.lang.Thread.sleep;
 
 public class WebUI {
     public static void waitForPageLoaded() {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(30), Duration.ofMillis(500));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigData.PAGE_LOAD_TIMEOUT), Duration.ofMillis(500));
         JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
 
         //Wait for Javascript to load

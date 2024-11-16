@@ -1,21 +1,30 @@
 package sam.com.common;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
+import sam.com.constants.constants.ConfigData;
 import sam.com.constants.constants.drivers.DriverManager;
+import sam.com.constants.helpers.PropertiesHelper;
 import sam.com.pageObjectModal.Pages.CommonPage;
 
+import java.io.ObjectInputFilter;
 import java.time.Duration;
 
-public class BaseTest extends CommonPage {
+public class BaseTest {
 
     @BeforeMethod
-    public void createDriver() {
-
-        WebDriver driver = setUpDriver("");
-        DriverManager.setDriver(driver);
+    @Parameters({"browser"})
+    public void createDriver(String browser) {
+        WebDriver driver;
+        if (ConfigData.BROWSER != null && !ConfigData.BROWSER.isEmpty()) {
+            driver = setUpDriver(ConfigData.BROWSER);
+        } else {
+            driver = setUpDriver(browser);
+        }
+        DriverManager.setDriver(driver);// gan gia tri driver vao threadlocal
     }
 
     public WebDriver setUpDriver(String browserName) {
@@ -33,30 +42,30 @@ public class BaseTest extends CommonPage {
         return driver;
     }
 
-        private WebDriver initChromeDriver() {
-            WebDriver driver = new ChromeDriver();
-            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-            driver.manage().window().maximize();
-            return driver;
-        }
+    private WebDriver initChromeDriver() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+        return driver;
+    }
 
-        private WebDriver initSafariDriver() {
+    private WebDriver initSafariDriver() {
         WebDriver driver = new SafariDriver();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         return driver;
-        }
+    }
 
-        private WebDriver initFirefoxDriver(){
+    private WebDriver initFirefoxDriver() {
         WebDriver driver = new FirefoxDriver();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         return driver;
-        }
+    }
 
 
     @AfterMethod
-  public void closeDriver() {
+    public void closeDriver() {
         if (DriverManager.getDriver() != null) {
             DriverManager.quit();
         }

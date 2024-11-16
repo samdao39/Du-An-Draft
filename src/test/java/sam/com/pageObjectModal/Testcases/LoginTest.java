@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
     public void loginSuccess(){
         loginPage = new LoginPage();
         loginPage.clickPopup();
-        loginPage.loginCMS(ConfigData.Email, ConfigData.Password);
+        loginPage.loginCMS(ConfigData.EMAIL,ConfigData.PASSWORD);
         loginPage.verifyLoginCMSSuccess();
 
     }
@@ -20,14 +20,14 @@ public class LoginTest extends BaseTest {
     public void loginFailWithEmailInvalid(){
         loginPage = new LoginPage();
         loginPage.clickPopup();
-        loginPage.loginCMS("sam@ecomdy.com",ConfigData.Password);
+        loginPage.loginCMS("sam@ecomdy.com",ConfigData.PASSWORD);
         loginPage.verifyLoginCMSFail();
     }
     @Test()
     public void loginFailWithPasswordInvalid(){
         loginPage = new LoginPage();
         loginPage.clickPopup();
-        loginPage.loginCMS(ConfigData.Email,"1123123");
+        loginPage.loginCMS(ConfigData.EMAIL,"1123123");
         loginPage.verifyLoginCMSFail();
     }
 }

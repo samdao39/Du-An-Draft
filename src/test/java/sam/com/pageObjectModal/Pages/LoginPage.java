@@ -33,7 +33,7 @@ DriverManager.getDriver().findElement(inputEmail).sendKeys(email);
     }
 
     public void clickPopup() {
-        DriverManager.getDriver().get(ConfigData.Url);
+        DriverManager.getDriver().get(ConfigData.URL);
         WebUI.waitForPageLoaded();
         DriverManager.getDriver().findElement(popup).click();
     }
