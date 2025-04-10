@@ -2,6 +2,7 @@ package sam.com.constants.helpers;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -79,7 +80,7 @@ public class ExcelHelper {
         }
     }
 
-    //Gọi ra hàm này dùng cho rõ ràng
+    //Gọi ra hàm này dùng cho rõ ràng phải làm file excel có tên cột mới dùng hàm này
     public String getCellData(String columnName, int rowIndex) {// int la vi tri index
         Integer colum = columns.get(columnName);
         return getCellData(colum, rowIndex);
@@ -145,6 +146,61 @@ public class ExcelHelper {
         } catch (Exception e) {
             e.getMessage();
         }
+    }
+
+    // get all data from a sheet
+    public Object[][] getExcelData(String filePath, String sheetName) {
+        Object[][] data = null;
+        Workbook workbook = null;
+        try {
+            // load the file
+            FileInputStream fis = new FileInputStream(filePath);
+
+            // load the workbook
+            workbook = new XSSFWorkbook(fis);
+
+            // load the sheet
+            Sheet sh = workbook.getSheet(sheetName);
+
+            // load the row
+            Row row = sh.getRow(0);
+
+            //
+            int noOfRows = sh.getPhysicalNumberOfRows();
+            int noOfCols = row.getLastCellNum();
+
+            System.out.println(noOfRows + " - " + noOfCols);
+
+            Cell cell;
+            data = new Object[noOfRows - 1][noOfCols];
+
+            //
+            for (int i = 1; i < noOfRows; i++) {
+                for (int j = 0; j < noOfCols; j++) {
+                    row = sh.getRow(i);
+                    cell = row.getCell(j);
+
+                    switch (cell.getCellType()) {
+                        case STRING:
+                            data[i - 1][j] = cell.getStringCellValue();
+                            break;
+                        case NUMERIC:
+                            data[i - 1][j] = String.valueOf(cell.getNumericCellValue());
+                            break;
+                        case BLANK:
+                            data[i - 1][j] = cell.getStringCellValue();
+                            break;
+                        default:
+                            data[i - 1][j] = cell.getStringCellValue();
+                            break;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("The exception is:" + e.getMessage());
+            throw new RuntimeException(e);
+        }
+        return data;
     }
 }
 

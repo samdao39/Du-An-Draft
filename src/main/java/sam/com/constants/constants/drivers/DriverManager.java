@@ -2,20 +2,23 @@ package sam.com.constants.constants.drivers;
 
 import org.openqa.selenium.WebDriver;
 
+import java.sql.Driver;
+
 public class DriverManager {
-    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> threadLocal = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
-        return driver.get();
+
+        return threadLocal.get();
     }
 
     public static void setDriver(WebDriver driver) {
+        threadLocal.set(driver);
 
-        DriverManager.driver.set(driver);
     }
 
     public static void quit() {
-        DriverManager.driver.get().quit();
-        driver.remove();
+        threadLocal.get().quit();
+        threadLocal.remove();
     }
 }
